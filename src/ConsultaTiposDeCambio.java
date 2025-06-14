@@ -7,7 +7,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConsultaTiposDeCambio {
-    public TiposDeCambio consultaTipos() {
+    public RespuestaAPI consultaRespuestaCompleta() {
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/e6d48a6ba243a00948b17d65/latest/USD");
 
         HttpClient client = HttpClient.newHttpClient();
@@ -16,18 +16,11 @@ public class ConsultaTiposDeCambio {
                 .build();
 
         try {
-            HttpResponse<String> response  = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             Gson gson = new Gson();
-                    RespuestaAPI respuesta = gson.fromJson(response.body(), RespuestaAPI.class);
-                    return respuesta.conversion_rates();
+            return gson.fromJson(response.body(), RespuestaAPI.class);
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-//        String json = response.body();
-//        System.out.println(json);
-
-
     }
 }
