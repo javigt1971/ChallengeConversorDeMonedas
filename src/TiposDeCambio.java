@@ -1,2 +1,2 @@
-public record TiposDeCambio(Double USD, Double GTQ, Double EUR) {
+public record TiposDeCambio(Double USD, Double GTQ, Double EUR, Double MXN) {
 }
