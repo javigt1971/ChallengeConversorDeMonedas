@@ -17,9 +17,11 @@ public class ObtenerTasasYConvertir {
         tasasDeCambio.put("GTQ_USD", respuesta.conversion_rates().GTQ());
         tasasDeCambio.put("EUR_USD", respuesta.conversion_rates().EUR());
         tasasDeCambio.put("MXN_USD", respuesta.conversion_rates().MXN());
+        tasasDeCambio.put("BRL_USD", respuesta.conversion_rates().BRL());
         tasasDeCambio.put("USD_GTQ", (1 / tasasDeCambio.get("GTQ_USD")));
         tasasDeCambio.put("USD_EUR", (1 / tasasDeCambio.get("EUR_USD")));
         tasasDeCambio.put("USD_MXN", (1 / tasasDeCambio.get("MXN_USD")));
+        tasasDeCambio.put("USD_BRL", (1 / tasasDeCambio.get("BRL_USD")));
 
         BigDecimal tasaGTQtoUSD = BigDecimal.valueOf(tasasDeCambio.get(tasaDeCambio)); // Invertir la tasa
         BigDecimal cantidadGTQ = BigDecimal.valueOf(cantidad);

@@ -17,9 +17,19 @@ public class DesplegarMenu {
                                              2. Dolares a Quetzales
                                              3. Pesos a Dolares N/A
                                              4. Dolares a Pesos N/A
-                                             5. La fecha y hora actuales
-                6. SALIR DEL SISTEMA
+                                             5. Real Brasileño a Dolares
+                                             6. Dolares a Real Brasileño
+                                             7. La fecha y hora actuales
+                8. SALIR DEL SISTEMA
                 """);
         System.out.println("==============================================================================================");
+    }
+    public static void limpiarPantalla() {
+        // Imprime 50 líneas vacías para "empujar" el contenido anterior hacia arriba
+        System.out.print("\033[H\033[2J");
+        System.out.flush();  // A veces ayuda a que el código ANSI surta efecto en algunas consolas
+        for (int i = 0; i < 50; ++i) {
+            System.out.println();
+        }
     }
 }

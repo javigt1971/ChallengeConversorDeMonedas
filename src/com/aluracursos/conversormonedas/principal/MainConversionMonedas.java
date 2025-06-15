@@ -16,7 +16,7 @@ public class MainConversionMonedas {
                 while (true) {
                     DesplegarMenu.menu();
                     opcion = scanner.nextInt();
-
+                    DesplegarMenu.limpiarPantalla();
                     switch (opcion) {
                         case 1:
                             System.out.println("Ingresa cantidad en Quetzales: ");
@@ -39,9 +39,19 @@ public class MainConversionMonedas {
                             System.out.println("Cantidad de Pesos: " + convertir.efectuarCambio("MXN_USD", cantidad));
                             break;
                         case 5:
-                            System.out.println("La fecha y hora actuales son: " + new java.util.Date());
+                            System.out.println("Ingresa cantidad en Dolares: ");
+                            cantidad = scanner.nextDouble();
+                            System.out.println("Cantidad de en Real Brasileño: " + convertir.efectuarCambio("BRL_USD", cantidad));
                             break;
                         case 6:
+                            System.out.println("Ingresa cantidad en Real Brasileño ");
+                            cantidad = scanner.nextDouble();
+                            System.out.println("Cantidad de Dolares: " + convertir.efectuarCambio("USD_BRL", cantidad));
+                            break;
+                        case 7:
+                            System.out.println("La fecha y hora actuales son: " + new java.util.Date());
+                            break;
+                        case 8:
                             System.out.println("Saliendo del programa...");
                             scanner.close();
                             return;
